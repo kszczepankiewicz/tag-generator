@@ -13,6 +13,7 @@ let tag;
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     if (!tag) tag = new Tag(input.value);
+    if (!tag.text) tag.text = input.value;
     pre.textContent = `<${tag.tag}>${tag.text || ''}</${tag.tag}>`;
     input.value = '';
 });
